@@ -1,0 +1,1140 @@
+:root {
+    --primary-color: #6a11cb;
+    --secondary-color: #2575fc;
+    --accent-color: #ffcc00;
+    --dark-bg: #0f172a;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --card-hover: rgba(255, 255, 255, 0.1);
+}
+
+
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-main);
+    background-image: radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+        radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+        radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+/* Navbar */
+.glass-nav {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.5rem;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--text-main) !important;
+    transform: translateY(-2px);
+}
+
+/* Instagram-style Bottom Nav */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 65px;
+    background: #000;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 2000;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.bottom-nav-item {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.bottom-nav-item:active {
+    transform: scale(0.85);
+}
+
+.nav-profile-img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #fff;
+}
+
+/* Instagram Profile View Styles */
+.ig-profile-container {
+    max-width: 935px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.ig-header {
+    display: flex;
+    align-items: center;
+    padding: 0 20px 30px;
+}
+
+.ig-avatar-wrapper {
+    position: relative;
+    margin-right: 30px;
+}
+
+.ig-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    padding: 2px;
+    border: 1px solid #fff;
+}
+
+.ig-avatar-plus {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background: #0095f6;
+    color: white;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border: 2px solid #000;
+}
+
+.ig-stats {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.ig-stat-val {
+    display: block;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.ig-stat-label {
+    font-size: 0.85rem;
+    color: #a8a8a8;
+}
+
+.ig-bio-section {
+    padding: 0 20px 20px;
+}
+
+.ig-username-title {
+    font-weight: 700;
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+}
+
+.ig-bio-text {
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+    line-height: 1.4;
+}
+
+.ig-actions {
+    display: flex;
+    gap: 8px;
+    padding: 0 20px 25px;
+}
+
+.btn-ig-action {
+    flex: 1;
+    background: #363636;
+    color: white;
+    border: none;
+    padding: 7px 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.btn-ig-action:active {
+    opacity: 0.7;
+}
+
+.btn-ig-icon {
+    width: 32px;
+    background: #363636;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Highlights */
+.ig-highlights {
+    display: flex;
+    gap: 15px;
+    padding: 0 20px 30px;
+    overflow-x: auto;
+}
+
+.ig-highlight-item {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.ig-highlight-circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 1px solid #363636;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.ig-highlight-circle i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.ig-highlight-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ig-highlight-label {
+    font-size: 0.75rem;
+    max-width: 65px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Post Grid */
+.ig-tabs {
+    border-top: 1px solid #262626;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.ig-tab-btn {
+    color: #a8a8a8;
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    padding: 10px;
+}
+
+.ig-tab-btn.active {
+    color: #fff;
+}
+
+.ig-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    padding-bottom: 20px;
+}
+
+.ig-grid-item {
+    aspect-ratio: 1/1;
+    background: #262626;
+    overflow: hidden;
+    position: relative;
+}
+
+.ig-grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ig-grid-item i.multi-post {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: white;
+    font-size: 0.9rem;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Responsive Utilities */
+@media (min-width: 992px) {
+    .bottom-nav {
+        display: none !important;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .navbar-toggler,
+    .navbar-collapse {
+        display: none !important;
+    }
+
+    .navbar.fixed-top {
+        display: flex !important;
+        background: #000;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 10px 0;
+    }
+
+    body {
+        padding-top: 60px;
+        padding-bottom: 75px;
+        /* Space for bottom nav */
+    }
+}
+
+
+/* Global Section Styles */
+section {
+    scroll-margin-top: 110px;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+    position: relative;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    background: linear-gradient(to bottom right, #fff 30%, #a5b4fc 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    animation: fadeUp 1s ease-out 0.2s backwards;
+}
+
+/* Buttons */
+.btn-glow {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 0 20px rgba(37, 117, 252, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(37, 117, 252, 0.5);
+    color: white;
+}
+
+.btn-outline-glow {
+    background: #0a1128;
+    color: white;
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    border: 2px solid #2563eb;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-outline-glow:hover {
+    background: #0f172a;
+    border-color: #3b82f6;
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+    transform: translateY(-3px);
+    color: white;
+}
+
+/* Glass Cards */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.4s ease;
+    height: 100%;
+}
+
+.glass-card:hover {
+    background: var(--card-hover);
+    transform: translateY(-10px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 0 auto 1.5rem;
+    color: var(--accent-color);
+}
+
+/* Member Specific Styles */
+
+#members .glass-card {
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#members .glass-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    background: rgba(255, 182, 193, 1) transparent 20%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-color);
+}
+
+#members img {
+    transition: all 0.4s ease;
+    filter: grayscale(20%);
+}
+
+#members .glass-card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(30, 139, 195, 1);
+
+}
+
+#members h5 {
+    font-weight: 800;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+}
+
+#members small {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+    width: fit-content;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    margin: 5px auto 0;
+    font-weight: 600;
+}
+
+/* Gallery */
+.gallery-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.1);
+}
+
+/* Profile Image */
+#user-picture {
+    object-fit: cover;
+    border: 2px solid var(--accent-color);
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid var(--glass-border);
+    background: rgba(0, 0, 0, 0.2);
+    padding: 3rem 0;
+    margin-top: 5rem;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Social Follow System (ML Style) */
+.btn-follow {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    padding: 2px 12px;
+    border-radius: 4px;
+    transition: all 0.3s;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.btn-follow:hover {
+    background: var(--accent-color);
+    color: var(--dark-bg);
+}
+
+.btn-following {
+    background: rgba(255, 204, 0, 0.1);
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    pointer-events: none;
+}
+
+/* User Profile Stats */
+.profile-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* TikTok Style Chat Refinements */
+.tiktok-chat-list {
+    background: transparent !important;
+}
+
+.tiktok-msg {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    max-width: 85%;
+}
+
+.tiktok-msg.mine {
+    margin-left: auto;
+    align-items: flex-end;
+}
+
+.tiktok-msg.other {
+    margin-right: auto;
+    align-items: flex-start;
+}
+
+.tiktok-bubble {
+    padding: 8px 16px;
+    border-radius: 18px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tiktok-msg.other .tiktok-bubble {
+    background: #333;
+    color: white;
+    border-bottom-left-radius: 4px;
+}
+
+.tiktok-msg.mine .tiktok-bubble {
+    background: #fe2c55;
+    /* TikTok Red */
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.tiktok-meta {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin: 4px 4px 0;
+}
+
+/* Base Responsive logic remains */
+
+@media (max-width: 576px) {
+    .hero-section {
+        min-height: auto;
+        padding-top: 130px;
+        padding-bottom: 3rem;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .badge {
+        font-size: 0.8rem !important;
+        white-space: normal;
+        margin-bottom: 1rem !important;
+        /* Override mb-4 */
+    }
+}
+
+/* --- Mobile Legends Style Social UI --- */
+
+/* Modal Container */
+.ml-modal {
+    background: #0a1128;
+    border: 2px solid #2563eb;
+    border-radius: 12px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Header */
+.ml-header {
+    background: linear-gradient(90deg, rgba(23, 32, 54, 0.9) 0%, rgba(30, 41, 69, 0.9) 100%);
+    border-bottom: 1px solid #2a364f !important;
+}
+
+.ml-tabs .nav-link {
+    color: #8a9bb8 !important;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    padding: 1rem 1.5rem;
+    transition: all 0.2s;
+}
+
+.ml-tabs .nav-link.active,
+.ml-tabs .nav-link:hover {
+    color: #ffffff !important;
+    text-shadow: 0 0 15px rgba(106, 17, 203, 0.8);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(106, 17, 203, 0.2) 100%);
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+/* Body & Search */
+.ml-body {
+    background: transparent;
+}
+
+.ml-search-container {
+    background: rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ml-search-group {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(37, 99, 235, 0.5);
+    border-radius: 4px;
+}
+
+.ml-search-group:focus-within {
+    border-color: #3b82f6;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+.btn-ml-primary {
+    background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-ml-primary:hover {
+    filter: brightness(1.2);
+    color: white;
+}
+
+.btn-ml-secondary {
+    background: linear-gradient(180deg, #2d3b55 0%, #172033 100%);
+    border: 1px solid #4a5a75;
+    color: #8a9bb8;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.btn-ml-secondary:hover {
+    background: #364563;
+    color: white;
+}
+
+/* Player List */
+.ml-list-container {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 0;
+}
+
+/* Scrollbar styling */
+.ml-list-container::-webkit-scrollbar {
+    width: 6px;
+    background: #0d121f;
+}
+
+.ml-list-container::-webkit-scrollbar-thumb {
+    background: #2d3b55;
+    border-radius: 3px;
+}
+
+.ml-player-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Subtle border */
+    background: #0f172a;
+    /* Dark blue background */
+    border-radius: 8px;
+    /* Rounded corners */
+    margin-bottom: 8px;
+    /* Space between items */
+    transition: all 0.3s;
+    border-left: 3px solid transparent;
+}
+
+.ml-player-item:hover {
+    background: #1e293b;
+    border-color: #2563eb;
+    /* High contrast border on hover */
+    border-left: 3px solid #2563eb;
+    padding-left: 18px;
+}
+
+.ml-player-avatar {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.ml-player-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+    border: 1px solid #a5b4fc;
+}
+
+.ml-rank-badge {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    width: 20px;
+    height: 20px;
+    background: #fbbf24;
+    border-radius: 50%;
+    border: 2px solid #0f1623;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #000;
+    font-weight: bold;
+}
+
+.ml-player-info {
+    flex: 1;
+}
+
+.ml-player-name {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+}
+
+.ml-player-role {
+    color: #8a9bb8;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Follow Button (ML Heart Style) */
+.btn-ml-follow {
+    background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    border-radius: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 0 15px rgba(37, 117, 252, 0.4);
+    min-width: 100px;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.btn-ml-follow:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05);
+}
+
+.btn-ml-follow.following {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+    box-shadow: none;
+}
+
+/* Footer */
+.ml-footer {
+    background: #0d121f;
+    border-top: 1px solid #1e293b;
+    padding: 10px 20px;
+}
+
+.btn-ml-refresh {
+    background: transparent;
+    color: #8a9bb8;
+    border: 1px solid #2d3b55;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    border-radius: 2px;
+    transition: all 0.2s;
+}
+
+.btn-ml-refresh:hover {
+    color: white;
+    border-color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+/* --- TikTok Style Chat Layout --- */
+
+/* Override/Adjust existing chat-container */
+.chat-container {
+    height: calc(100vh - 70px) !important;
+    margin-top: 70px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    background: #000;
+}
+
+/* Sidebar */
+.chat-sidebar {
+    width: 350px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    background: #121212;
+}
+
+.contact-list {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.contact-item {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.contact-item.active {
+    background: rgba(255, 255, 255, 0.1);
+    border-right: 3px solid #fe2c55;
+}
+
+.contact-avatar {
+    position: relative;
+    margin-right: 15px;
+}
+
+.contact-avatar img {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.online-dot {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 10px;
+    height: 10px;
+    background: #4ade80;
+    border-radius: 50%;
+    border: 2px solid #121212;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-name {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.contact-preview {
+    color: #888;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+/* Main Area */
+.chat-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #000;
+}
+
+/* Header */
+.chat-header {
+    height: 70px;
+    background: #121212;
+}
+
+/* Message List */
+#message-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Responsive Sidebar toggle for mobile */
+@media (max-width: 768px) {
+    .chat-sidebar {
+        width: 80px;
+        /* Condensed view */
+    }
+
+    .contact-info,
+    .header-title {
+        display: none;
+    }
+
+    .contact-avatar {
+        margin-right: 0;
+        margin: 0 auto;
+    }
+
+    .contact-item {
+        justify-content: center;
+    }
+}
+
+/* --- Premium Profile Styles --- */
+
+.ig-header-premium {
+    padding: 2rem 1rem;
+    animation: fadeUp 0.8s ease-out;
+}
+
+.ig-avatar-premium {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #000;
+    outline: 3px solid transparent;
+    background-image: linear-gradient(#000, #000), linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888, #2563eb);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    padding: 3px;
+    transition: transform 0.3s ease;
+}
+
+.ig-avatar-premium:hover {
+    transform: scale(1.05) rotate(3deg);
+}
+
+.ig-avatar-wrapper {
+    position: relative;
+    width: 110px;
+    margin: 0 auto;
+}
+
+.ig-avatar-badge {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: #0095f6;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 3px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.ig-avatar-badge:hover {
+    transform: scale(1.1);
+}
+
+.ig-stats-premium .text-center {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.ig-stats-premium .text-center:hover {
+    opacity: 0.8;
+}
+
+.btn-premium-primary {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 10px 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+    flex: 1;
+    max-width: 160px;
+}
+
+.btn-premium-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(225, 48, 108, 0.4);
+    color: white;
+}
+
+.btn-premium-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 10px 0;
+    transition: background 0.2s;
+    flex: 1;
+    max-width: 160px;
+}
+
+.btn-premium-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.profile-tabs button {
+    border-radius: 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.profile-tabs button.active {
+    color: white !important;
+}
+
+.profile-tabs button:not(.active):hover {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+#profile-posts-grid .ratio {
+    cursor: pointer;
+}
+
+#profile-posts-grid img {
+    transition: transform 0.4s ease;
+}
+
+#profile-posts-grid .ratio:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}

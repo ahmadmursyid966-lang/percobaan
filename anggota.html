@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Anggota - Kelas 6 Ja'far</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap & CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top glass-nav navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="bi bi-stars me-2 text-warning"></i>JA'FAR 06</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center gap-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="chat.html">Chat</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Anggota</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="py-5 mt-5">
+        <div class="container py-5 text-center">
+            <h1 class="display-4 fw-bold gradient-text">Keluarga Besar Ja'far</h1>
+            <p class="text-white-50">Satu kelas, sejuta cerita, selamanya.</p>
+        </div>
+    </section>
+
+    <!-- Members Grid -->
+    <section class="pb-5 mb-5">
+        <div class="container">
+            <div class="row g-3" id="member-grid">
+                <!-- Cards will be populated dynamically or static upgraded -->
+
+                <!-- Card Item -->
+                <div class="col-6 col-md-3 col-lg-3">
+                    <div class="glass-card text-center p-4 h-100 hover-scale">
+                        <div class="position-relative d-inline-block mb-3">
+                            <img src="img/haidar.jpeg" class="rounded-circle border border-2 border-white" width="90"
+                                height="90" style="object-fit: cover;" alt="Member">
+                            <div class="position-absolute bottom-0 end-0 bg-primary rounded-circle border border-dark p-1"
+                                style="width: 24px; height: 24px;"></div>
+                        </div>
+                        <h6 class="mb-1 fw-bold text-white">Ahmad Haidar</h6>
+                        <span
+                            class="badge bg-white bg-opacity-10 text-white border border-white border-opacity-25 rounded-pill px-3 py-1 fw-normal">Ketua
+                            Kelas</span>
+                    </div>
+                </div>
+
+                <!-- Repeat for other key members (or keep static for now as requested) -->
+                <div class="col-6 col-md-3 col-lg-3">
+                    <div class="glass-card text-center p-4 h-100 hover-scale">
+                        <div class="position-relative d-inline-block mb-3">
+                            <img src="https://source.unsplash.com/random/200x200/?boy"
+                                class="rounded-circle border border-2 border-white" width="90" height="90"
+                                style="object-fit: cover;" alt="Member">
+                        </div>
+                        <h6 class="mb-1 fw-bold text-white">Hisyam</h6>
+                        <span
+                            class="badge bg-white bg-opacity-10 text-white border border-white border-opacity-25 rounded-pill px-3 py-1 fw-normal">Sekretaris</span>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3 col-lg-3">
+                    <div class="glass-card text-center p-4 h-100 hover-scale">
+                        <div class="position-relative d-inline-block mb-3">
+                            <img src="https://source.unsplash.com/random/200x200/?boy,2"
+                                class="rounded-circle border border-2 border-white" width="90" height="90"
+                                style="object-fit: cover;" alt="Member">
+                        </div>
+                        <h6 class="mb-1 fw-bold text-white">Zidane</h6>
+                        <span
+                            class="badge bg-white bg-opacity-10 text-white border border-white border-opacity-25 rounded-pill px-3 py-1 fw-normal">Sekretaris</span>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3 col-lg-3">
+                    <div class="glass-card text-center p-4 h-100 hover-scale">
+                        <div class="position-relative d-inline-block mb-3">
+                            <img src="https://source.unsplash.com/random/200x200/?girl"
+                                class="rounded-circle border border-2 border-white" width="90" height="90"
+                                style="object-fit: cover;" alt="Member">
+                        </div>
+                        <h6 class="mb-1 fw-bold text-white">Zahra</h6>
+                        <span
+                            class="badge bg-white bg-opacity-10 text-white-50 border border-white border-opacity-25 rounded-pill px-3 py-1 fw-normal">Bendahara</span>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3 col-lg-3">
+                    <div class="glass-card text-center p-4 h-100 hover-scale">
+                        <div class="position-relative d-inline-block mb-3">
+                            <img src="https://source.unsplash.com/random/200x200/?student"
+                                class="rounded-circle border border-2 border-white" width="90" height="90"
+                                style="object-fit: cover;" alt="Member">
+                        </div>
+                        <h6 class="mb-1 fw-bold text-white">Fathan</h6>
+                        <span
+                            class="badge bg-white bg-opacity-10 text-white-50 border border-white border-opacity-25 rounded-pill px-3 py-1 fw-normal">Bendahara</span>
+                    </div>
+                </div>
+
+                <!-- More placeholder styling applied generally via CSS, 
+                     but simplifying the list for now to look cleaner 
+                     (User can scroll or we'd implement pagination later) -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center mt-5">
+        <div class="container">
+            <p class="mb-0 text-muted">&copy; 2024 Kelas 6 Ja'far. Made with <i
+                    class="bi bi-heart-fill text-danger"></i> & Friendship.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="social.js"></script>
+    <script type="module" src="auth.js"></script>
+
+    <!-- Instagram-style Bottom Nav -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="bottom-nav-item">
+            <i class="bi bi-house-door-fill"></i>
+        </a>
+        <a href="index.html#gallery" class="bottom-nav-item">
+            <i class="bi bi-grid-3x3"></i>
+        </a>
+        <a href="menfess.html" class="bottom-nav-item">
+            <i class="bi bi-plus-square"></i>
+        </a>
+        <a href="chat.html" class="bottom-nav-item">
+            <i class="bi bi-chat-dots-fill"></i>
+        </a>
+        <a href="profile.html" class="bottom-nav-item">
+            <img src="img/default-profile.png" id="bottom-nav-profile" class="nav-profile-img">
+        </a>
+    </nav>
+</body>
+
+
+</html>

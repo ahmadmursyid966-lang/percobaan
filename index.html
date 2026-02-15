@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kelas 6 Ja'far - Solidaritas Tanpa Batas</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&dicsplay=swap" rel="stylesheet">
+
+    <!-- Bootstrap & CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="style.css" rel="stylesheet">
+
+    <!-- Google Identity Services -->
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top glass-nav navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-stars me-2 text-warning"></i>JA'FAR 6</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center gap-3">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#members">Anggota</a></li>
+                    <li class="nav-item"><a class="nav-link" href="chat.html">Chat</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="toggleSocialModal()">Social</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menfess.html">Menfess</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Galeri</a></li>
+
+                    <!-- Google Login & Profile Wrapper -->
+                    <li class="nav-item ps-md-3 border-start-md border-secondary">
+                        <!-- Login Button -->
+                        <div id="login-wrapper">
+                            <div class="mb-3">
+                                <input type="text" id="username-input" class="form-control"
+                                    placeholder="Enter username" />
+                            </div>
+                            <button class="btn btn-primary" type="button" onclick="login()">Login</button>
+                        </div>
+
+                        <!-- Profile Display (Hidden Default) -->
+                        <div id="user-profile" class="d-none align-items-center gap-2">
+                            <a href="profile.html"><img id="user-picture" src="img/default-profile.png"
+                                    onerror="this.src='img/default-profile.png'" alt="Profile" class="rounded-circle"
+                                    width="40" height="40"></a>
+                            <div class="d-flex flex-column text-start">
+                                <span id="user-name" class="fw-bold text-white small">User Name</span>
+                                <span class="text-white-50" style="font-size: 0.75rem;">siswa</span>
+                            </div>
+                            <button onclick="signOut()" class="btn btn-sm btn-link text-danger text-decoration-none"><i
+                                    class="bi bi-box-arrow-right"></i></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <span class="badge rounded-pill bg-white text-dark px-3 py-2 mb-4 shadow"><i
+                    class="bi bi-rocket-takeoff-fill me-2 text-primary"></i>Angkatan 2025 - 2026</span>
+            <h1 class="hero-title">Bersama Mengukir<br>Sejarah Kita</h1>
+            <p class="hero-subtitle">Kita datang sebagai orang asing, belajar sebagai teman, dan lulus sebagai keluarga.
+                Inilah kisah Kelas 6 Ja'far.</p>
+            <div class="d-flex justify-content-center flex-wrap gap-3">
+                <a href="#about" class="btn btn-glow">Tentang Kami</a>
+                <a href="#gallery" class="btn btn-outline-glow">Lihat Galeri</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="glass-card text-center">
+                        <div class="icon-wrapper"><i class="bi bi-heart-pulse-fill"></i></div>
+                        <h4 class="text-danger">Solidaritas</h4>
+                        <p class="text-light">Ikatan persaudaraan yang tak akan pernah putus oleh jarak dan waktu.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card text-center">
+                        <div class="icon-wrapper"><i class="bi bi-lightbulb-fill"></i></div>
+                        <h4 class="text-danger">Kreativitas</h4>
+                        <p class="text-light">Ide-ide brilian yang selalu muncul di tengah kebersamaan kita.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card text-center">
+                        <div class="icon-wrapper"><i class="bi bi-trophy-fill"></i></div>
+                        <h4 class="text-danger">Prestasi</h4>
+                        <p class="text-light">Mengharumkan nama kelas dan sekolah dengan bakat masing-masing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Members Section -->
+    <section id="members" class="py-3">
+        <div class="container">
+            <div class="text-center mb-3">
+                <h2 class="display-5 fw-bold">Anggota Kelas</h2>
+            </div>
+
+            <!-- Row 1: 1 Leader -->
+            <div class="row justify-content-center g-4 mb-4">
+                <div class="col-6 col-md-4">
+                    <div class="glass-card text-center p-3">
+                        <div class="mb-3 position-relative d-inline-block">
+                            <img src="img/haidar.jpeg" class="rounded-circle border border-2 border-info" width="100"
+                                height="100" alt="Member" style="object-fit: cover;">
+                        </div>
+                        <h5 class="mb-1">Ahmad haidar.r</h5>
+                        <p class="small text-white-50 mb-0">Ketua Kelas</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="glass-card text-center p-3">
+                        <div class="mb-3 position-relative d-inline-block">
+                            <img src="https://source.unsplash.com/random/200x200/?girl"
+                                class="rounded-circle border border-2 border-info" width="100" height="100"
+                                alt="Member">
+                        </div>
+                        <h5 class="mb-1">daffa</h5>
+                        <p class="small text-white-50 mb-0">wakil ketua</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Row 2: 2 Members -->
+            <div class="row justify-content-center g-4 mb-4">
+                <div class="col-6 col-md-4">
+                    <div class="glass-card text-center p-3">
+                        <div class="mb-3 position-relative d-inline-block">
+                            <img src="img/hisyam.jpeg" class="rounded-circle border border-2 border-info" width="100"
+                                height="100" alt="Member" style="object-fit: cover;">
+                        </div>
+                        <h5 class="mb-1">hisyam</h5>
+                        <p class="small text-white-50 mb-0">Sekretaris</p>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4">
+                    <div class="glass-card text-center p-3">
+                        <div class="mb-3 position-relative d-inline-block">
+                            <img src="https://source.unsplash.com/random/200x200/?boy,student"
+                                class="rounded-circle border border-2 border-info" width="100" height="100"
+                                alt="Member">
+                        </div>
+                        <h5 class="mb-1">zidane</h5>
+                        <p class="small text-white-50 mb-0">Sekretaris</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: 2 Members -->
+            <div class="row justify-content-center g-4">
+                <div class="col-6 col-md-4">
+                    <div class="glass-card text-center p-3">
+                        <div class="mb-3 position-relative d-inline-block">
+                            <img src="img/fathan.jpeg" class="rounded-circle border border-2 border-info" width="100"
+                                height="100" alt="Member" style="object-fit: cover;">
+                        </div>
+                        <h5 class="mb-1">fathan</h5>
+                        <p class="small text-white-50 mb-0">Anggota</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="glass-card text-center p-3">
+                        <div class="mb-3 position-relative d-inline-block">
+                            <img src="https://source.unsplash.com/random/200x200/?girl,student"
+                                class="rounded-circle border border-2 border-info" width="100" height="100"
+                                alt="Member">
+                        </div>
+                        <h5 class="mb-1">arga</h5>
+                        <p class="small text-white-50 mb-0">Bendahara</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-3">
+                <a class=" btn btn-glow px-4" href="anggota.html">Lihat Seluruh Siswa
+                </a>
+            </div>
+
+            <!-- Gallery Section -->
+            <section id="gallery" class="py-5">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 class="display-5 fw-bold">Momen Terbaik</h2>
+                        <p class="text-muted">Sedikit cuplikan dari jutaan kenangan</p>
+                    </div>
+                    <div class="row g-4">
+                        <!-- Placeholder Images -->
+                        <div class="col-md-4 col-12">
+                            <div class="gallery-item">
+                                <img src="img/fotbar.jpeg" class="gallery-img" alt="Gallery">
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="gallery-item">
+                                <img src="img/fotbar-1.jpeg" class="gallery-img" alt="Gallery">
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="gallery-item">
+                                <img src="img/fotbar-2.jpeg" class="gallery-img" alt="Gallery">
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="gallery-item">
+                                <img src="img/fotbar-3.jpeg" class="gallery-img" alt="Gallery">
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="gallery-item">
+                                <img src="img/fotbar-4.jpeg" class="gallery-img" alt="Gallery">
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12">
+                            <div class="gallery-item">
+                                <img src="img/fotbar-5.jpeg" class="gallery-img" alt="Gallery">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Footer -->
+            <footer class="text-center">
+                <div class="container">
+                    <p class="mb-0 text-muted">&copy; 2024 Kelas 6 Ja'far. Made with <i
+                            class="bi bi-heart-fill text-danger"></i> & Friendship.</p>
+                </div>
+            </footer>
+
+            <!-- Scripts -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            <script type="module" src="social.js"></script>
+            <script type="module" src="social.js"></script>
+            <script type="module" src="auth.js"></script>
+            <script>
+                function signOut() {
+                    localStorage.removeItem('username');
+                    window.location.reload();
+                }
+
+                // Toggle Social Modal helper
+                function toggleSocialModal() {
+                    const modal = document.getElementById('social-modal');
+                    const bsModal = new bootstrap.Modal(modal);
+                    bsModal.show();
+                }
+
+                // Auto-open social modal if parameter exists
+                window.addEventListener('load', () => {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    if (urlParams.get('openSocial') === 'true') {
+                        toggleSocialModal();
+                    }
+                });
+            </script>
+            <script type="module" src="social.js"></script>
+
+            <!-- Social Modal (ML Style) -->
+            <div class="modal fade" id="social-modal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content ml-modal">
+                        <div class="modal-header ml-header border-0 pb-0">
+                            <ul class="nav nav-tabs ml-tabs border-0" id="socialTabs" role="tablist">
+                                <li class="nav-item">
+                                    <button class="nav-link active" id="friends-tab" data-bs-toggle="tab"
+                                        data-bs-target="#friends" type="button">Add Friends</button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link" id="nearby-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nearby" type="button">Nearby</button>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body ml-body p-0">
+                            <!-- Search Bar -->
+                            <div class="p-3 ml-search-container">
+                                <div class="input-group ml-search-group">
+                                    <span class="input-group-text bg-transparent border-end-0 text-white-50"><i
+                                            class="bi bi-search"></i></span>
+                                    <input type="text" id="social-search"
+                                        class="form-control bg-transparent border-start-0 text-white"
+                                        placeholder="Tap to Enter Name or ID">
+                                    <button class="btn btn-ml-primary ms-2">Name Search</button>
+                                </div>
+                            </div>
+
+                            <div class="tab-content" id="socialTabsContent">
+                                <div class="tab-pane fade show active" id="friends" role="tabpanel">
+                                    <!-- List Container -->
+                                    <div class="ml-list-container" id="social-list">
+                                        <!-- Dynamic Content Here -->
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="nearby" role="tabpanel">
+                                    <div class="text-center text-white-50 py-5">
+                                        <i class="bi bi-radar p-3 fs-1 d-block opacity-25"></i>
+                                        <p>Scanning nearby area...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer ml-footer border-0 justify-content-between">
+                            <span class="text-white-50 small">Current Version 1.0.0</span>
+                            <button class="btn btn-ml-refresh" onclick="renderSocialList()"><i
+                                    class="bi bi-arrow-clockwise me-1"></i> Refresh</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="data.js"></script>
+
+
+            <!-- Instagram-style Bottom Nav -->
+            <nav class="bottom-nav">
+                <a href="#" class="bottom-nav-item">
+                    <i class="bi bi-house-door-fill"></i>
+                </a>
+                <a href="#gallery" class="bottom-nav-item">
+                    <i class="bi bi-grid-3x3"></i>
+                </a>
+                <a href="menfess.html" class="bottom-nav-item">
+                    <i class="bi bi-plus-square"></i>
+                </a>
+                <a href="chat.html" class="bottom-nav-item">
+                    <i class="bi bi-chat-dots-fill"></i>
+                </a>
+                <a href="javascript:void(0)" class="bottom-nav-item" onclick="toggleSocialModal()">
+                    <i class="bi bi-people-fill"></i>
+                </a>
+                <a href="javascript:void(0)" class="bottom-nav-item" onclick="handleProfileClick()">
+                    <img src="img/default-profile.png" id="bottom-nav-profile" class="nav-profile-img"
+                        onerror="this.src='img/default-profile.png'">
+                </a>
+            </nav>
+
+            <!-- Login Modal for Mobile -->
+            <div class="modal fade" id="login-modal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content glass-card border-0">
+                        <div class="modal-header border-0 pb-0">
+                            <h5 class="modal-title fw-bold">Login ke JA'FAR 6</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="text-white-50 small mb-4">Masukan username kamu untuk lanjut ngobrol dan berbagi
+                                momen.</p>
+                            <div class="mb-3">
+                                <label class="form-label small text-white-50">Username</label>
+                                <input type="text" id="mobile-username-input"
+                                    class="form-control bg-dark border-secondary text-white"
+                                    placeholder="Contoh: Haidar">
+                            </div>
+                            <button class="btn btn-glow w-100" onclick="loginMobile()">Login Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                function handleProfileClick() {
+                    const username = localStorage.getItem('username');
+                    if (username) {
+                        window.location.href = 'profile.html';
+                    } else {
+                        const loginModal = new bootstrap.Modal(document.getElementById('login-modal'));
+                        loginModal.show();
+                    }
+                }
+
+                async function loginMobile() {
+                    const username = document.getElementById('mobile-username-input').value.trim();
+                    if (username === '') {
+                        alert('Please enter a username.');
+                        return;
+                    }
+                    localStorage.setItem('username', username);
+                    // Use applyLogin from auth.js (exposed to window)
+                    if (window.applyLogin) {
+                        await window.applyLogin(username);
+                        bootstrap.Modal.getInstance(document.getElementById('login-modal')).hide();
+                    } else {
+                        window.location.reload();
+                    }
+                }
+            </script>
+</body>
+
+
+
+</html>
